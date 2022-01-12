@@ -1,1 +1,3 @@
--- This file should undo anything in `up.sql`
+alter table transactions drop constraint fk_customer;
+drop table accounts;
+drop table transactions;
