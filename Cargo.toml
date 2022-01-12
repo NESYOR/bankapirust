@@ -1,0 +1,41 @@
+[package]
+name = "rust-banking-api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = { version = "3", features = ["openssl"] }
+actix-rt = "1.0"
+rusoto_core = "0.46.0"
+rusoto_lambda = "0.46.0"
+actix-service = "1.0.6"
+actix-cors = "0.5.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+json = "0.12"
+diesel = { version = "1.4.4", features = ["postgres", "uuid", "r2d2", "chrono"] }
+dotenv = "0.15.0"
+env_logger = "0.8.2"
+jsonwebtoken = "7.2.0"
+futures = "0.3.8"
+log = "0.4.11"
+chrono = { version = "0.4", features = ["serde"] }
+bcrypt = "0.10.1"
+http = "0.2.2"
+openssl = { version = "0.10", features = ["vendored"] }
+actix-multipart = "0.3.0"
+rusoto_s3 = "0.46.0"
+failure = "0.1.8"
+rusoto_dynamodb = "0.46.0"
+tokio = { version= "1.0.1",features = ["full"]}
+tokio-stream = "0.1.3"
+uuid = { version = "0.8", features = ["serde", "v4"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
